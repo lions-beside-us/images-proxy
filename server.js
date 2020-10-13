@@ -1,9 +1,20 @@
 const express = require('express');
 const {createProxyMiddleware} = require('http-proxy-middleware');
 const app = express();
-const port = 5000;
+const path = require('path');
+const port = 2001;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/artistBio', createProxyMiddleware({
+  target: 'http://localhost:2000/',
+  headers: {
+    method: 'GET'
+  },
+  changeOrigin: true
+}));
+
+app.use('/', createProxyMiddleware({
   target: 'http://localhost:2000/',
   headers: {
     method: 'GET'
