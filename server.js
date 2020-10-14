@@ -3,6 +3,7 @@ const {createProxyMiddleware} = require('http-proxy-middleware');
 const app = express();
 const path = require('path');
 const port = 2001;
+const chalk = require('chalk');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -23,7 +24,7 @@ app.use('/', createProxyMiddleware({
 }));
 
 app.listen(port, () => {
-  console.log(`Listening on port http://localhost:${port}`);
+  console.log(chalk.magenta(`Listening on port http://localhost:${port}`));
 });
 
 module.exports = app;
