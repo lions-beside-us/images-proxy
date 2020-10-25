@@ -2,7 +2,7 @@ const express = require('express');
 const {createProxyMiddleware} = require('http-proxy-middleware');
 const app = express();
 const path = require('path');
-const port = 7000;
+const port = 80;
 const chalk = require('chalk');
 
 app.use(express.static(path.join(__dirname, 'client')));
@@ -51,3 +51,5 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
+// change all localhosts to IP's for each service
