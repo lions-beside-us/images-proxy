@@ -13,27 +13,27 @@ app.use('/songdata/', createProxyMiddleware({
 }));
 
 app.use('/relatedTracks/', createProxyMiddleware({
-  target: 'http://localhost:3001',
+  target: 'http://3.15.220.99:3001',
   changeOrigin: true
 }));
 
 app.use('/artistBio/', createProxyMiddleware({
-  target: 'http://localhost:2000',
+  target: 'http://34.220.154.45:2000',
   changeOrigin: true
 }));
 
 app.use('/comments/', createProxyMiddleware({
-  target: 'http://localhost:9000',
+  target: 'http://3.138.151.252:4000',
   changeOrigin: true
 }));
 
 app.use('/hashtags/', createProxyMiddleware({
-  target: 'http://localhost:9001',
+  target: 'http://3.19.209.147:4001',
   changeOrigin: true
 }));
 
 app.use('/users/', createProxyMiddleware({
-  target: 'http://localhost:9002',
+  target: 'http://3.16.151.4:4002',
   changeOrigin: true
 }));
 
@@ -42,7 +42,7 @@ app.use('/:current', (req, res) => {
 });
 
 app.use('/', createProxyMiddleware({
-  target: 'http://localhost:2000',
+  target: 'http://34.220.154.45:2000',
   changeOrigin: true
 }));
 
@@ -51,5 +51,3 @@ app.listen(port, () => {
 });
 
 module.exports = app;
-
-// change all localhosts to IP's for each service
