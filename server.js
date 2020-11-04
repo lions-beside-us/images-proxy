@@ -25,6 +25,12 @@ app.use('/artistBio/', createProxyMiddleware({
   changeOrigin: true
 }));
 
+// Cam - Song Description
+app.use('/songDescription/', createProxyMiddleware({
+  target: 'http://localhost:2001',
+  changeOrigin: true
+}));
+
 // Toly - Comments
 app.use('/comments/', createProxyMiddleware({
   target: 'http://52.14.128.124:4000',
