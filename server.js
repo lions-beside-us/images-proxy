@@ -27,7 +27,7 @@ app.use('/artistBio/', createProxyMiddleware({
 
 // Cam - Song Description
 app.use('/songDescription/', createProxyMiddleware({
-  target: 'http://localhost:2001',
+  target: 'http://54.191.20.103:2001',
   changeOrigin: true
 }));
 
